@@ -2,6 +2,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class TaskManager {
     private final Path FILE_PATH = Path.of("./tasks.json");
@@ -44,8 +45,7 @@ public class TaskManager {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }
-        else {
+        } else {
             try {
                 Files.writeString(FILE_PATH, toJson());
             } catch (Exception e) {
@@ -63,6 +63,17 @@ public class TaskManager {
         Task new_task = new Task(description);
         tasks.add(new_task);
         System.out.println("Task added successfully (ID: " + new_task.getId() + ")");
+    }
+
+    /**
+     * Update the task with the given ID
+     * 
+     * @param id
+     * @param description
+     */
+    public void updateTask(String id, String description) {
+        Task task = findTask(id).orElseThrow(() -> new IllegalArgumentException("Task with ID " + id + " not found"));
+        task.updateTask(description);
     }
 
     /**
@@ -101,6 +112,16 @@ public class TaskManager {
         }
         json.append("\n]");
         return json.toString();
+    }
+
+      /**
+     * find a task with the given ID
+     * 
+     * @param id
+     * @return Task
+     */
+    public Optional<Task> findTask(String id) {
+        return tasks.stream().filter(t -> t.getId() == Integer.parseInt(id)).findFirst();
     }
 
     /**
