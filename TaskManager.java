@@ -77,6 +77,15 @@ public class TaskManager {
     }
 
     /**
+     * Delete a task with the given ID
+     * 
+     * @param id
+     */
+    public void deleteTask(String id) {
+        tasks.removeIf(t -> t.getId() == Integer.parseInt(id));
+    }
+
+    /**
      * List all tasks
      */
     public void listTasks() {
@@ -114,7 +123,7 @@ public class TaskManager {
         return json.toString();
     }
 
-      /**
+    /**
      * find a task with the given ID
      * 
      * @param id
