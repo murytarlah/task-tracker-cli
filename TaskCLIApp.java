@@ -44,7 +44,6 @@ public class TaskCLIApp {
                     return;
                 }
                 taskManager.deleteTask(args[1]);
-                // System.out.println("Task deleted successfully (ID: " + args[1] + ")");
                 break;
             case "mark-in-progress":
                 if (args.length < 2) {
@@ -52,13 +51,33 @@ public class TaskCLIApp {
                     return;
                 }
                 taskManager.markInProgress(args[1]);
+                break;
             case "mark-done":
                 if (args.length < 2) {
                     System.out.println("Usage: TaskCLIApp mark-done <id>");
                     return;
                 }
                 taskManager.markDone(args[1]);
+                break;
             case "list":
+                if (args.length >= 2) {
+                    String option = args[1];
+
+                    switch (option) {
+                        case "todo":
+                            taskManager.listTasks("todo");
+                            break;
+                        case "in-progress":
+                            taskManager.listTasks("in-progress");
+                            break;
+                        case "done":
+                            taskManager.listTasks("done");
+                            break;
+                        default:
+                            System.out.println("Usage: TaslCLIApp list <option>");
+                            break;
+                    }
+                }
                 taskManager.listTasks(null);
                 break;
             default:

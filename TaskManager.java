@@ -26,6 +26,9 @@ public class TaskManager {
 
         try {
             String JsonContent = Files.readString(FILE_PATH);
+            if (JsonContent.length() == 0) {
+                return new ArrayList<>();
+            }
             storedTasks = fromJson(JsonContent);
 
         } catch (Exception e) {
@@ -148,13 +151,9 @@ public class TaskManager {
      * @param status
      */
     public void listTasks(String status) {
-        if (status == null) {
-            listTasks();
-        } else {
-            for (Task task : tasks) {
-                if (task.getStatus().getValue().equals(status)) {
-                    System.out.println(task.toJson());
-                }
+        for (Task task : tasks) {
+            if (task.getStatus().getValue().equals(status)) {
+                System.out.println(task.toJson());
             }
         }
     }

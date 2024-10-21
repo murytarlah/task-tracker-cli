@@ -1,7 +1,7 @@
 public enum Status {
-    TODO("Todo"), 
-    IN_PROGRESS("In progress"), 
-    DONE("Done");
+    TODO("todo"), 
+    IN_PROGRESS("in-progress"), 
+    DONE("done");
 
     private final String value;
 

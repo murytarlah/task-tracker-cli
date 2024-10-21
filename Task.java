@@ -55,7 +55,7 @@ public class Task {
         String description = parts[1].split(":")[1];
         Task task = new Task(description);
         task.id = Integer.parseInt(parts[0].split(":")[1]);
-        task.status = Status.valueOf(parts[2].split(":")[1].replace(" ", "_").toUpperCase());
+        task.status = Status.valueOf(parts[2].split(":")[1].replace("-", "_").toUpperCase());
         task.createdAt = LocalDateTime.parse(parts[3].split("[a-z]:")[1].strip().replace("\"", ""));
         task.updatedAt = LocalDateTime.parse(parts[4].split("[a-z]:")[1].strip().replace("\"", ""));
         return task;
