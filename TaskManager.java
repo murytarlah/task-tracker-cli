@@ -117,6 +117,23 @@ public class TaskManager {
     }
 
     /**
+     * Mark the task with the given ID as done
+     * 
+     * @param id
+     */
+    public void markDone(String id) {
+        try {
+            Task task = findTask(id)
+                    .orElseThrow(() -> new IllegalArgumentException("Task with ID " + id + " not found"));
+            task.markDone();
+            System.out.println("Task completed successfully (ID: " + id + ")");
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+            return;
+        }
+    }
+
+    /**
      * List all tasks
      */
     public void listTasks() {

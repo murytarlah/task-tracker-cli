@@ -48,10 +48,16 @@ public class TaskCLIApp {
                 break;
             case "mark-in-progress":
                 if (args.length < 2) {
-                    System.out.println("Usage: TaskCLIApp delete <id>");
+                    System.out.println("Usage: TaskCLIApp mark-in-progress <id>");
                     return;
                 }
                 taskManager.markInProgress(args[1]);
+            case "mark-done":
+                if (args.length < 2) {
+                    System.out.println("Usage: TaskCLIApp mark-done <id>");
+                    return;
+                }
+                taskManager.markDone(args[1]);
             case "list":
                 taskManager.listTasks(null);
                 break;
