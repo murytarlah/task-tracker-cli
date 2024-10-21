@@ -37,7 +37,6 @@ public class TaskCLIApp {
                     return;
                 }
                 taskManager.updateTask(args[1], args[2]);
-                System.out.println("Task updated successfully (ID: " + args[1] + ")");
                 break;
             case "delete":
                 if (args.length < 2) {
@@ -45,8 +44,14 @@ public class TaskCLIApp {
                     return;
                 }
                 taskManager.deleteTask(args[1]);
-                System.out.println("Task deleted successfully (ID: " + args[1] + ")");
+                // System.out.println("Task deleted successfully (ID: " + args[1] + ")");
                 break;
+            case "mark-in-progress":
+                if (args.length < 2) {
+                    System.out.println("Usage: TaskCLIApp delete <id>");
+                    return;
+                }
+                taskManager.markInProgress(args[1]);
             case "list":
                 taskManager.listTasks(null);
                 break;

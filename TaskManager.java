@@ -72,8 +72,15 @@ public class TaskManager {
      * @param description
      */
     public void updateTask(String id, String description) {
-        Task task = findTask(id).orElseThrow(() -> new IllegalArgumentException("Task with ID " + id + " not found"));
-        task.updateTask(description);
+        try {
+            Task task = findTask(id)
+                    .orElseThrow(() -> new IllegalArgumentException("Task with ID " + id + " not found"));
+            task.updateTask(description);
+            System.out.println("Task updated successfully (ID: " + id + ")");
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+            return;
+        }
     }
 
     /**
@@ -82,7 +89,31 @@ public class TaskManager {
      * @param id
      */
     public void deleteTask(String id) {
-        tasks.removeIf(t -> t.getId() == Integer.parseInt(id));
+        try {
+            findTask(id).orElseThrow(() -> new IllegalArgumentException("Task with ID " + id + " not found"));
+            tasks.removeIf(t -> t.getId() == Integer.parseInt(id));
+            System.out.println("Task deleted successfully (ID: " + id + ")");
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+            return;
+        }
+    }
+
+    /**
+     * Mark the task with the given ID as in progress
+     * 
+     * @param id
+     */
+    public void markInProgress(String id) {
+        try {
+            Task task = findTask(id)
+                    .orElseThrow(() -> new IllegalArgumentException("Task with ID " + id + " not found"));
+            task.markInProgress();
+            System.out.println("Task with ID " + id + " now in progress");
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+            return;
+        }
     }
 
     /**
