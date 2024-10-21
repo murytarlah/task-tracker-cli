@@ -97,7 +97,13 @@ Here are some ideas for future improvements to this project:
 
 I hope this README provides a clear understanding of the project! Feel free to use and modify this code as you see fit.
 
-Let's Connect!🌟
+### Credits
+This project is part of the projects to help newbie backend developers to practice their skills. It was created by [roadmap.sh](https://roadmap.sh/).
+
+Here is the link to the project: [TaskCLIApp](https://roadmap.sh/projects/task-tracker)
+
+
+### Let's Connect!🌟
 
 * [LinkedIn](https://www.linkedin.com/in/murytarlah)
 * [X](https://x.com/murytarlah)
