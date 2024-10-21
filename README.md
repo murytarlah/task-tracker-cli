@@ -1,8 +1,8 @@
-## TaskCLIApp: A Command-Line Task Manager
+# TaskCLIApp: A Command-Line Task Manager
 
 This project is a simple command-line application for managing tasks. It allows you to add, update, delete, mark tasks as in progress or done, and list all tasks.
 
-### What I learned
+## What I learned
 
 While building this project, I gained experience with the following concepts:
 
@@ -10,7 +10,7 @@ While building this project, I gained experience with the following concepts:
 * **Command-Line Arguments:** I learned how to parse command-line arguments and use them to control the program's behavior.
 * **Object-Oriented Programming (OOP):**  I designed classes to represent tasks, their status, and methods to manipulate them.
 
-### How it Works
+## How it Works
 
 The project consists of three main classes:
 
@@ -18,7 +18,7 @@ The project consists of three main classes:
 * **TaskManager:** This class manages the list of tasks. It provides methods to add, update, delete, mark tasks as in progress or done, and list all tasks or tasks filtered by status.
 * **TaskCLIApp:** This is the main class that interacts with the user through the command line. It parses the user-provided commands and arguments and calls the appropriate methods from the TaskManager class.
 
-### Running the Project
+## Running the Project
 
 **Prerequisites:**
 
@@ -86,7 +86,7 @@ in your terminal.
 
 The application will provide feedback messages based on the commands and arguments you use.
 
-### Possible Upgrades
+## Possible Upgrades
 
 Here are some ideas for future improvements to this project:
 
@@ -97,13 +97,13 @@ Here are some ideas for future improvements to this project:
 
 I hope this README provides a clear understanding of the project! Feel free to use and modify this code as you see fit.
 
-### Credits
+## Credits
+
 This project is part of the projects to help newbie backend developers to practice their skills. It was created by [roadmap.sh](https://roadmap.sh/).
 
 Here is the link to the project: [TaskCLIApp](https://roadmap.sh/projects/task-tracker)
 
-
-### Let's Connect!🌟
+## Let's Connect!🌟
 
 * [LinkedIn](https://www.linkedin.com/in/murytarlah)
 * [X](https://x.com/murytarlah)
